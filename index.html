@@ -31,6 +31,28 @@
           );
         }
       </script>
+        <style>
+  /* Ensure the image is properly sized and positioned */
+  img {
+    max-width: 100% !important; /* Ensures it takes the correct width */
+    height: auto !important; /* Maintains aspect ratio */
+    display: block;
+  }
+
+  .image-container {
+    width: 60vw; /* Controls image width */
+    max-width: 600px; /* Prevents it from getting too large */
+    margin-top: 12rem; /* Adjust this value to move it down */
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .image-container {
+      width: 80vw; /* Makes it responsive */
+      margin-top: 8rem; /* Moves it down on smaller screens */
+    }
+  }
+</style>
         <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="icon" type="image/png" sizes="196x196" href="favicons/icons-favicon-196.png">
@@ -203,15 +225,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 </div>
                                 <!-- Adjusted section for the image -->
                                <div class="absolute left-0 bottom-0 sm:top-[-12%] lg:-bottom-[50px] w-full h-full opacity-0 pointer-events-none flex items-end sm:items-start justify-center lg:z-10 px-5 overflow-hidden" data-lamp-image="">
-                                <div class="relative w-[500px] flex justify-center mt-[14rem] mr-[35rem] sm:mt-16 sm:mr-0" data-intro-lamp="" style="max-width: 500px;">
-                                    <picture class="w-full h-auto max-w-[500px] max-h-full object-contain" style="max-width: 500px; height: auto;">
-                                        <img class="block w-full h-auto max-w-[500px] max-h-full object-contain" src="images/green_.png" alt="image description" width="1940" height="2426" draggable="false">
-                                    </picture>
-                                    <picture class="w-full h-auto absolute left-0 right-0 top-0 opacity-0 h-full object-contain z-2 max-w-[500px] max-h-full" style="max-width: 500px; height: auto;" data-lamp-on="">
-                                        <img class="block w-full h-auto object-contain max-w-[500px] max-h-full" src="images/green_.png" alt="image description" width="1940" height="2426" draggable="false">
-                                    </picture>
+                                    <div class="image-container flex justify-center mx-auto" data-intro-lamp="">
+                                        <picture class="w-full h-auto max-w-full max-h-full object-contain">
+                                            <img class="block w-full h-auto max-w-full max-h-full object-contain" src="images/green_.png" alt="image description" width="1940" height="2426" draggable="false">
+                                        </picture>
+                                        <picture class="w-full h-auto absolute left-0 right-0 top-0 opacity-0 h-full object-contain z-2 max-w-full max-h-full" data-lamp-on="">
+                                            <img class="block w-full h-auto object-contain max-w-full max-h-full" src="images/green_.png" alt="image description" width="1940" height="2426" draggable="false">
+                                        </picture>
+                                    </div>
                                 </div>
-                            </div>
                                                        
                                 
                                 <div class="absolute bottom-0 w-full opacity-0 z-3" data-animation="fade" data-delay="0">
