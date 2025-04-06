@@ -23,6 +23,7 @@
         <link ref="preload" as="font/woff2" crossorigin="anonymous" href="/assets/fonts/bdc2e0b04aa3147414c6.woff2">
         <link rel="preload" href="/assets/css/main.34aef33c831eb5708be0.css" as="style">
         <link rel="stylesheet" href="css/css-main.34aef33c831eb5708be0.css" as="text/css" data-keep-asset="">
+        
         <!-- Register service worker for PWA offline mode support. -->
         <script>
         if ("serviceWorker" in window.navigator) {
@@ -62,9 +63,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }
   
           .image-container {
-              width: 600em; /* Controls image width */
-              max-width: 1000em; /* Prevents it from getting too large */
-              margin-top: 140em; /* Adjust this value to move it down */
+              width: 1000em; /* Controls image width */
+              max-width: 10000em; /* Prevents it from getting too large */
               position: relative;
               display: flex;
               top: 25em;
@@ -81,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               top: 2em;
               }
               .blue-page{
-                margin: 1;
+                margin: 1em;
               }
           }
   </style>
@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       <span class="h-1 w-full bg-current opacity-20 absolute left-0 bottom-0 origin-left scale-x-0" data-loading-line=""></span>
                       <div class="h-full w-full pointer-events-none flex items-center justify-center absolute left-0 top-0" data-loading-progress="">00%</div>
                       <div class="flex items-center justify-between top-1 laptop:grid laptop:grid-cols-12 laptop:gap-x-15 header-container  py-15 laptop:py-10 container" style=" display: fex; justify-content: space-between; align-items: center;">
-                          <div class="left-10 laptop:col-span-3 relative z-2">
+                          <div class="left-10 laptop:col-span-[3.5] relative z-2">
                               <img src="images/green_invest.png" style="width: 8em; padding: 0;" class="header-logo cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="300" height="50em" fill="none" viewbox="0 0 101 14" data-scroll-to="top">
                                   <path fill="currentColor" d="M7.328.356h3.943c.077.07.89 1.44 2.44 4.109 3.13 5.377 4.76 8.187 4.892 8.429v.023h-4.556c-.108-.11-1.515-2.505-4.221-7.188-.332-.562-.505-.843-.52-.843-3.046 5.237-4.61 7.914-4.695 8.031H.03v-.059C4.718 4.796 7.151.628 7.328.356Zm9.644 0h3.908l4.58 4.998C28.412 2.092 29.93.426 30.016.356h3.909c.038.008.057.027.057.058-.354.36-2.536 2.755-6.545 7.188v5.256c0 .04-.02.059-.058.059h-3.862c-.039 0-.058-.02-.058-.059V7.602L16.914.391l.058-.035Zm21.996 0h9.217c1.387 0 2.517.542 3.388 1.627.408.577.613 1.186.613 1.826v5.678c0 1.272-.706 2.275-2.116 3.008a4.352 4.352 0 0 1-1.885.422h-9.101c-1.35 0-2.47-.554-3.365-1.662-.386-.555-.578-1.132-.578-1.733V3.786c0-1.335.778-2.373 2.336-3.114.616-.21 1.114-.316 1.491-.316Zm.14 5.034v2.47c0 1.014.52 1.69 1.56 2.025.147.039.3.059.463.059h5.088c.91 0 1.545-.488 1.908-1.464.054-.14.08-.328.08-.562V5.53c0-1.07-.489-1.783-1.468-2.142a7.013 7.013 0 0 0-.752-.047h-4.856c-.933 0-1.58.484-1.943 1.452-.054.195-.08.394-.08.597ZM59.573.356h13.125c.039.008.058.027.058.058v2.868c0 .04-.02.059-.058.059H61.701c-.995 0-1.657.55-1.989 1.65a4.145 4.145 0 0 0-.035.457v2.435c0 .921.455 1.569 1.365 1.943.185.078.405.118.659.118h10.997c.039 0 .058.015.058.046v2.868c0 .04-.02.059-.058.059H59.654c-1.349 0-2.47-.554-3.365-1.662-.385-.562-.578-1.14-.578-1.733V3.669c0-1.023.574-1.92 1.723-2.693.748-.413 1.46-.62 2.14-.62Zm16.767 0h3.85c.039.008.058.027.058.058v12.444c0 .04-.02.059-.058.059h-3.85c-.04 0-.059-.02-.059-.059V.414c.008-.039.027-.058.058-.058Zm7.5 0h13.147c1.172 0 2.236.515 3.192 1.545.432.617.648 1.225.648 1.826v9.131c0 .04-.02.059-.058.059h-3.863c-.038 0-.057-.02-.057-.059v-7.27c0-1.108-.47-1.83-1.411-2.165a2.603 2.603 0 0 0-.613-.082h-7.077v9.517c0 .04-.02.059-.058.059h-3.85c-.04 0-.059-.02-.059-.059V.414c.008-.039.027-.058.058-.058Z"></path>
                               <!-- </svg> -->
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                           </button>
                           <div class="laptop:flex-row grid-cols- laptop:items-center laptop:col-span-8 pt-60 laptop:p-0 flex flex-col text-cream" data-header-menu="">
                               <div class="flex-grow laptop:col-span-3 px-12 py-40 laptop:p-0">
-                                  <ul class="laptop:flex laptop:items-center laptop:gap-x-25 text-[3rem] laptop:text-sm leading-small font-medium">
+                                  <ul style="font-size: 1.2em;" class="laptop:flex laptop:items-center laptop:gap-x-25 text-[3rem] laptop:text-sm leading-small font-medium">
                                       <li class="mb-5 laptop:mb-0" data-stagger="">
                                           <a class="inline-flex items-center" href="#features" data-scroll-to="#features"><span class="link">Home</span></a>
                                       </li>
@@ -384,7 +384,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             <!-- <path d="M1 1L309 246L449 246" stroke="currentColor" stroke-opacity="0.2" stroke-dasharray="6 6"></path> -->
                                         </svg>
                                         <div class="p-12 laptop:p-18 relative left-0 bottom-0 w-full md:bottom-auto md:top-[7.6rem] md:left-auto md:w-auto md:right-0">
-                                            <div class="grid relative w-full bottom-0 right-0 bg-bronze bg-opacity-10 backdrop-blur-lg rounded overflow-hidden md:max-w-[23rem] laptop:max-w-[28rem] 2xl:max-w-[33.5rem]" data-content-description-parent="">
+                                            <div class="grid relative w-full bottom-0 right-0 bg-bronze bg-opacity-10 backdrop-blur-lg rounded overflow-hidden md:max-w-[23rem] laptop:max-w-[30rem] 2xl:max-w-[33.5rem]" data-content-description-parent="">
                                                 <div class="w-full p-20" data-content-description="">
                                                     <div class="mb-20 md:mb-35">
                                                         <div class="custom-icon custom-icon--large">
@@ -509,25 +509,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     <div class="grid gap-y-10 md:gap-y-15 mb-20 md:mb-30">
                                         <div class="flex gap-x-10 md:gap-x-15 items-center" data-animation="moveUp">
                                             <div class="custom-icon custom-icon--large">
-                                                <img class="w-full h-full object-contain" src="images/uploads-icon_flower_04e1b2632e.svg" alt="icon">
+                                                <img class="w-full h-full object-contain" style="background: transparent;" src="images/leaf.png" alt="icon">
                                             </div>
                                             <div> Fördert Biodiversitä</div>
                                         </div>
                                         <div class="flex gap-x-10 md:gap-x-15 items-center" data-animation="moveUp">
                                             <div class="custom-icon custom-icon--large">
-                                                <img class="w-full h-full object-contain" src="images/uploads-icon_sun_dark_d8262c380c.svg" alt="icon">
+                                                <img class="w-full h-full object-contain" src="images/sun.png" alt="icon">
                                             </div>
                                             <div>Reduziert Emissionen</div>
                                         </div>
                                         <div class="flex gap-x-10 md:gap-x-15 items-center" data-animation="moveUp">
                                             <div class="custom-icon custom-icon--large">
-                                                <img class="w-full h-full object-contain" src="images/uploads-icon_remove_af064e69e4.svg" alt="icon">
+                                                <img class="w-full h-full object-contain" src="images/energy.png" alt="icon">
                                             </div>
                                             <div>Ersetzt fossile Energie</div>
                                         </div>
                                         <div class="flex gap-x-10 md:gap-x-15 items-center" data-animation="moveUp">
                                             <div class="custom-icon custom-icon--large">
-                                                <img class="w-full h-full object-contain" src="images/uploads-icon_night_fa0a131ba0.svg" alt="icon">
+                                                <img class="w-full h-full object-contain" src="images/recycling.png" alt="icon">
                                             </div>
                                             <div> Baut Grüne Infrastruktur au </div>
                                         </div>
@@ -742,10 +742,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <div class="relative pb-20 pt-40 md:pt-60 md:pb-35 laptop:pt-100 container md:grid md:grid-cols-12  md:gap-x-18">
                                 <span class="absolute w-full h-1 bg-current opacity-20 top-0 left-0"></span>
                                 <div class="hidden md:block md:col-span-4 h3 m-0" data-animation="split"></div>
-                                <h3 class="md:col-span-8 m-0" data-animation="split"> Unsere Firmen
+                                <h3 class="md:col-span-8 m-0" data-animation="split"> Zertifikationen
                                 <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
                             </div>
-                            <div class="relative w-full h-full overflow-hidden px-6 md:px-9" data-component="carousel">
+                            <div class="relative pt-10 w-full h-full overflow-hidden px-6 md:px-9" data-component="carousel">
                                 <div class="flex justify-center">
                                     <div class="h-[26rem] md:h-[32rem] laptop:h-[42rem] whitespace-nowrap inline-block align-top" data-row="">
                                         <div class="h-full w-auto px-6 md:px-9 inline-block align-top" data-draggable-block="">
