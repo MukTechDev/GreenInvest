@@ -72,6 +72,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           .blue-page{
             margin: 5em;
           }
+          .faq-question {
+        transition: all 0.3s ease;
+    }
+    
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        display: none; /* Start hidden */
+    }
+    
+    .faq-item.active .faq-answer {
+        display: block; /* Show when active */
+        max-height: 1000px; /* Adjust based on your content */
+    }
+    
+    .faq-item.active .faq-toggle {
+        transform: rotate(45deg);
+    }
   
           @media (max-width: 768px) {
               .image-container {
@@ -89,90 +108,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <body>
           <div class="wrapper" data-scroll-wrapper="" id="top">
               <div class="page-holder relative" data-scroller="">
-                  <header class="fixed top-0 left-0 w-full  text-cream" data-header="">
-                      <span class="h-1 w-full bg-current opacity-20 absolute left-0 bottom-0 origin-left scale-x-0" data-loading-line=""></span>
-                      <div class="h-full w-full pointer-events-none flex items-center justify-center absolute left-0 top-0" data-loading-progress="">00%</div>
-                      <div class="flex items-center justify-between top-1 laptop:grid laptop:grid-cols-12 laptop:gap-x-15 header-container  py-15 laptop:py-10 container" style=" display: fex; justify-content: space-between; align-items: center;">
-                          <div class="left-10 laptop:col-span-[3.5] relative z-2">
-                              <img src="images/green_invest.png" style="width: 8em; padding: 0;" class="header-logo cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="300" height="50em" fill="none" viewbox="0 0 101 14" data-scroll-to="top">
-                                  <path fill="currentColor" d="M7.328.356h3.943c.077.07.89 1.44 2.44 4.109 3.13 5.377 4.76 8.187 4.892 8.429v.023h-4.556c-.108-.11-1.515-2.505-4.221-7.188-.332-.562-.505-.843-.52-.843-3.046 5.237-4.61 7.914-4.695 8.031H.03v-.059C4.718 4.796 7.151.628 7.328.356Zm9.644 0h3.908l4.58 4.998C28.412 2.092 29.93.426 30.016.356h3.909c.038.008.057.027.057.058-.354.36-2.536 2.755-6.545 7.188v5.256c0 .04-.02.059-.058.059h-3.862c-.039 0-.058-.02-.058-.059V7.602L16.914.391l.058-.035Zm21.996 0h9.217c1.387 0 2.517.542 3.388 1.627.408.577.613 1.186.613 1.826v5.678c0 1.272-.706 2.275-2.116 3.008a4.352 4.352 0 0 1-1.885.422h-9.101c-1.35 0-2.47-.554-3.365-1.662-.386-.555-.578-1.132-.578-1.733V3.786c0-1.335.778-2.373 2.336-3.114.616-.21 1.114-.316 1.491-.316Zm.14 5.034v2.47c0 1.014.52 1.69 1.56 2.025.147.039.3.059.463.059h5.088c.91 0 1.545-.488 1.908-1.464.054-.14.08-.328.08-.562V5.53c0-1.07-.489-1.783-1.468-2.142a7.013 7.013 0 0 0-.752-.047h-4.856c-.933 0-1.58.484-1.943 1.452-.054.195-.08.394-.08.597ZM59.573.356h13.125c.039.008.058.027.058.058v2.868c0 .04-.02.059-.058.059H61.701c-.995 0-1.657.55-1.989 1.65a4.145 4.145 0 0 0-.035.457v2.435c0 .921.455 1.569 1.365 1.943.185.078.405.118.659.118h10.997c.039 0 .058.015.058.046v2.868c0 .04-.02.059-.058.059H59.654c-1.349 0-2.47-.554-3.365-1.662-.385-.562-.578-1.14-.578-1.733V3.669c0-1.023.574-1.92 1.723-2.693.748-.413 1.46-.62 2.14-.62Zm16.767 0h3.85c.039.008.058.027.058.058v12.444c0 .04-.02.059-.058.059h-3.85c-.04 0-.059-.02-.059-.059V.414c.008-.039.027-.058.058-.058Zm7.5 0h13.147c1.172 0 2.236.515 3.192 1.545.432.617.648 1.225.648 1.826v9.131c0 .04-.02.059-.058.059h-3.863c-.038 0-.057-.02-.057-.059v-7.27c0-1.108-.47-1.83-1.411-2.165a2.603 2.603 0 0 0-.613-.082h-7.077v9.517c0 .04-.02.059-.058.059h-3.85c-.04 0-.059-.02-.059-.059V.414c.008-.039.027-.058.058-.058Z"></path>
-                              <!-- </svg> -->
-                          </div>
-                          <button class="cursor-pointer w-30 h-30 laptop:hidden z-2 relative" data-menu-opener="">
-                              <svg class="absolute left-0 top-0 w-full h-full" width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="15.0015" cy="15.0009" r="14.5" stroke="currentColor"></circle>
-                                  <path d="M10 10L20 20" stroke="currentColor" stroke-linecap="round"></path>
-                                  <path d="M20 10L10 20" stroke="currentColor" stroke-linecap="round"></path>
-                              </svg>
-                              <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <circle cx="15.0015" cy="15.0009" r="14.5" stroke="currentColor"></circle>
-                                  <path d="M7.00098 13.0012L23.001 13.0007" stroke="currentColor" stroke-linecap="round"></path>
-                                  <path d="M7.00195 17.0012L23.002 17.0007" stroke="currentColor" stroke-linecap="round"></path>
-                              </svg>
-                          </button>
-                          <div class="laptop:flex-row grid-cols- laptop:items-center laptop:col-span-8 pt-60 laptop:p-0 flex flex-col text-cream" data-header-menu="">
-                              <div class="flex-grow laptop:col-span-3 px-12 py-40 laptop:p-0">
-                                  <ul style="font-size: 1.2em;" class="laptop:flex laptop:items-center laptop:gap-x-25 text-[3rem] laptop:text-sm leading-small font-medium">
-                                      <li class="mb-5 laptop:mb-0" data-stagger="">
-                                          <a class="inline-flex items-center" href="#features" data-scroll-to="#features"><span class="link">Home</span></a>
-                                      </li>
-                                      <li class="mb-5 laptop:mb-0" data-stagger="">
-                                          <a class="inline-flex items-center" href="#air-purification" data-scroll-to="#air-purification"><span class="link">Klimawandel </span></a>
-                                      </li>
-                                      <li class="mb-5 laptop:mb-0" data-stagger="">
-                                          <a class="inline-flex items-center" href="#air-purification" data-scroll-to="#air-purification"><span class="link">Klimaschutz </span></a>
-                                      </li>
-                                      <li class="mb-5 laptop:mb-0" data-stagger="">
-                                          <a class="inline-flex items-center" href="#air-purification" data-scroll-to="#air-purification"><span class="link">Roadmap</span></a>
-                                      </li>
-                                      <li class="mb-5 laptop:mb-0" data-stagger="">
-                                          <a class="inline-flex items-center" href="#air-purification" data-scroll-to="#air-purification"><span class="link">Unsere Firmen  </span></a>
-                                      </li>
-                                      <li class="mb-5 laptop:mb-0" data-stagger="">
-                                          <a class="inline-flex items-center" href="#company" data-scroll-to="#company"><span class="link">Zertifikationen</span></a>
-                                      </li>
-                                      <li class="mb-5 laptop:mb-0" data-stagger="">
-                                          <a class="inline-flex items-center" href="https://help.ayocin.com" target="_blank"><span class="link">Blog</span></a>
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div class="mt-auto laptop:col-span-3 laptop:ml-auto laptop:pl-30 px-12 pb-20 laptop:p-0" data-stagger="">
-                                  <button class="btn btn--secondary laptop:!hidden" type="button" data-order-button="" data-scroll-to="#order1" data-offset="header">Kontakt aufnehmen
-                                      <div class="btn__icon">
-                                          <svg class="svgi " aria-labelledby="symbol-arrow-right-desc-0" role="group">
-                                              <desc id="symbol-arrow-right-desc-0">arrow-right icon</desc>
-                                              <use xlink:href="#svg-arrow-right"></use>
-                                          </svg>
-                                      </div>
-                                  </button>
-                                  <button class="btn btn--primary laptop:!inline-block !hidden" type="button" data-order-button="" data-scroll-to="#order1" data-offset="header">Kontakt aufnehmen
-                                      <div class="btn__icon">
-                                          <svg class="svgi " aria-labelledby="symbol-arrow-right-desc-1" role="group">
-                                              <desc id="symbol-arrow-right-desc-1">arrow-right icon</desc>
-                                              <use xlink:href="#svg-arrow-right"></use>
-                                          </svg>
-                                      </div>
-                                  </button>
-                              </div>
-                              <div class="laptop:hidden mt-auto px-12 py-20 relative grid gap-y-10 pb-60 uppercase" data-stagger="">
-                                  <span class="h-1 absolute top-0 w-full bg-current opacity-20"></span>
-                                  <div data-stagger="">
-                                      <div class="opacity-40">&copy; 2025. GREEN INVEST. All right reserved </div>
-                                  </div>
-                                  <div data-stagger="">
-                                      <div class="opacity-40">
-                                          <a class="link" href="https://help.ayocin.com/en/articles/9902358-terms-conditions" target="_blank">terms</a>,&nbsp;<a class="link" href="https://help.ayocin.com/en/articles/9902255-privacy-policy" target="_blank">privacy policy</a>,&nbsp;<a class="link" href="https://help.ayocin.com/en/articles/9902266-cookie-policy" target="_blank">Cookies policy</a>
-                                      </div>
-                                  </div>
-                                  <div data-stagger="">
-                                      <div class="opacity-40">
-                                          <a class="link link--underline" href="t.me/muktech_solution" target="_blank">Website by mUKTECH_SOLUTION</a>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </header>
+                <header class="fixed top-0 left-0 w-full  text-cream" data-header="">
+                    <span class="h-1 w-full bg-current opacity-20 absolute left-0 bottom-0 origin-left scale-x-0" data-loading-line=""></span>
+                    <div class="h-full w-full pointer-events-none flex items-center justify-center absolute left-0 top-0" data-loading-progress="">00%</div>
+                    <div class="flex items-center justify-between top-1 laptop:grid laptop:grid-cols-12 laptop:gap-x-15 header-container  py-15 laptop:py-10 container" style=" display: fex; justify-content: space-between; align-items: center;">
+                        <div class="left-10 laptop:col-span-4 relative z-2">
+                            <img src="images/green_invest.png" style="width: 8em; padding: 0;" class="header-logo cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="300" height="50em" fill="none" viewbox="0 0 101 14" data-scroll-to="top">
+                                <path fill="currentColor" d="M7.328.356h3.943c.077.07.89 1.44 2.44 4.109 3.13 5.377 4.76 8.187 4.892 8.429v.023h-4.556c-.108-.11-1.515-2.505-4.221-7.188-.332-.562-.505-.843-.52-.843-3.046 5.237-4.61 7.914-4.695 8.031H.03v-.059C4.718 4.796 7.151.628 7.328.356Zm9.644 0h3.908l4.58 4.998C28.412 2.092 29.93.426 30.016.356h3.909c.038.008.057.027.057.058-.354.36-2.536 2.755-6.545 7.188v5.256c0 .04-.02.059-.058.059h-3.862c-.039 0-.058-.02-.058-.059V7.602L16.914.391l.058-.035Zm21.996 0h9.217c1.387 0 2.517.542 3.388 1.627.408.577.613 1.186.613 1.826v5.678c0 1.272-.706 2.275-2.116 3.008a4.352 4.352 0 0 1-1.885.422h-9.101c-1.35 0-2.47-.554-3.365-1.662-.386-.555-.578-1.132-.578-1.733V3.786c0-1.335.778-2.373 2.336-3.114.616-.21 1.114-.316 1.491-.316Zm.14 5.034v2.47c0 1.014.52 1.69 1.56 2.025.147.039.3.059.463.059h5.088c.91 0 1.545-.488 1.908-1.464.054-.14.08-.328.08-.562V5.53c0-1.07-.489-1.783-1.468-2.142a7.013 7.013 0 0 0-.752-.047h-4.856c-.933 0-1.58.484-1.943 1.452-.054.195-.08.394-.08.597ZM59.573.356h13.125c.039.008.058.027.058.058v2.868c0 .04-.02.059-.058.059H61.701c-.995 0-1.657.55-1.989 1.65a4.145 4.145 0 0 0-.035.457v2.435c0 .921.455 1.569 1.365 1.943.185.078.405.118.659.118h10.997c.039 0 .058.015.058.046v2.868c0 .04-.02.059-.058.059H59.654c-1.349 0-2.47-.554-3.365-1.662-.385-.562-.578-1.14-.578-1.733V3.669c0-1.023.574-1.92 1.723-2.693.748-.413 1.46-.62 2.14-.62Zm16.767 0h3.85c.039.008.058.027.058.058v12.444c0 .04-.02.059-.058.059h-3.85c-.04 0-.059-.02-.059-.059V.414c.008-.039.027-.058.058-.058Zm7.5 0h13.147c1.172 0 2.236.515 3.192 1.545.432.617.648 1.225.648 1.826v9.131c0 .04-.02.059-.058.059h-3.863c-.038 0-.057-.02-.057-.059v-7.27c0-1.108-.47-1.83-1.411-2.165a2.603 2.603 0 0 0-.613-.082h-7.077v9.517c0 .04-.02.059-.058.059h-3.85c-.04 0-.059-.02-.059-.059V.414c.008-.039.027-.058.058-.058Z"></path>
+                            <!-- </svg> -->
+                        </div>
+                        <button class="cursor-pointer w-30 h-30 laptop:hidden z-2 relative" data-menu-opener="">
+                            <svg class="absolute left-0 top-0 w-full h-full" width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="15.0015" cy="15.0009" r="14.5" stroke="currentColor"></circle>
+                                <path d="M10 10L20 20" stroke="currentColor" stroke-linecap="round"></path>
+                                <path d="M20 10L10 20" stroke="currentColor" stroke-linecap="round"></path>
+                            </svg>
+                            <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="15.0015" cy="15.0009" r="14.5" stroke="currentColor"></circle>
+                                <path d="M7.00098 13.0012L23.001 13.0007" stroke="currentColor" stroke-linecap="round"></path>
+                                <path d="M7.00195 17.0012L23.002 17.0007" stroke="currentColor" stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                        <div class="laptop:flex-row grid-cols- laptop:items-center laptop:col-span-8 pt-60 laptop:p-0  flex-col text-cream" style="display: flex; row-gap: 5em;" data-header-menu="">
+                            <div class="flex-grow laptop:col-span-2 px-12 py-10 laptop:p-0">
+                                <ul class="laptop:flex laptop:items-center laptop:gap-x-25 text-[3rem] laptop:text-sm leading-small font-medium">
+                                    <li class="mb-5 laptop:mb-0" data-stagger="">
+                                        <a class="inline-flex items-center" href="#features" data-scroll-to="#features"><span class="link">Home</span></a>
+                                    </li>
+                                    <li class="mb-5 laptop:mb-0" data-stagger="">
+                                        <a class="inline-flex items-center" href="#air-purification" data-scroll-to="#air-purification"><span class="link">Klimawandel </span></a>
+                                    </li>
+                                    <li class="mb-5 laptop:mb-0" data-stagger="">
+                                        <a class="inline-flex items-center" href="#air-purification" data-scroll-to="#air-purification"><span class="link">Klimaschutz </span></a>
+                                    </li>
+                                    <li class="mb-5 laptop:mb-0" data-stagger="">
+                                        <a class="inline-flex items-center" href="#air-purification" data-scroll-to="#air-purification"><span class="link">Roadmap</span></a>
+                                    </li>
+                                    <li class="mb-5 laptop:mb-0" data-stagger="">
+                                        <a class="inline-flex items-center" href="#air-purification" data-scroll-to="#air-purification"><span class="link">Unsere Firmen  </span></a>
+                                    </li>
+                                    <li class="mb-5 laptop:mb-0" data-stagger="">
+                                        <a class="inline-flex items-center" href="#company" data-scroll-to="#company"><span class="link">Zertifikationen</span></a>
+                                    </li>
+                                    <li class="mb-5 laptop:mb-0" data-stagger="">
+                                        <a class="inline-flex items-center" href="https://help.ayocin.com" target="_blank"><span class="link">Blog</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mt-auto laptop:col-span-3 laptop:ml-auto laptop:pl-30 px-12 pb-20 laptop:p-0" data-stagger="">
+                                <button class="btn btn--secondary laptop:!hidden" type="button" data-order-button="" data-scroll-to="#order1" data-offset="header">Kontakt aufnehmen
+                                    <div class="btn__icon">
+                                        <svg class="svgi " aria-labelledby="symbol-arrow-right-desc-0" role="group">
+                                            <desc id="symbol-arrow-right-desc-0">arrow-right icon</desc>
+                                            <use xlink:href="#svg-arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button class="btn btn--primary laptop:!inline-block !hidden" type="button" data-order-button="" data-scroll-to="#order1" data-offset="header">Kontakt aufnehmen
+                                    <div class="btn__icon">
+                                        <svg class="svgi " aria-labelledby="symbol-arrow-right-desc-1" role="group">
+                                            <desc id="symbol-arrow-right-desc-1">arrow-right icon</desc>
+                                            <use xlink:href="#svg-arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="laptop:hidden mt-auto px-12 py-20 relative grid gap-y-10 pb-60 uppercase" data-stagger="">
+                                <span class="h-1 absolute top-0 w-full bg-current opacity-20"></span>
+                                <div data-stagger="">
+                                    <div class="opacity-40">&copy; 2025. GREEN INVEST. All right reserved </div>
+                                </div>
+                                <div data-stagger="">
+                                    <div class="opacity-40">
+                                        <a class="link" href="https://help.ayocin.com/en/articles/9902358-terms-conditions" target="_blank">terms</a>,&nbsp;<a class="link" href="https://help.ayocin.com/en/articles/9902255-privacy-policy" target="_blank">privacy policy</a>,&nbsp;<a class="link" href="https://help.ayocin.com/en/articles/9902266-cookie-policy" target="_blank">Cookies policy</a>
+                                    </div>
+                                </div>
+                                <div data-stagger="">
+                                    <div class="opacity-40">
+                                        <a class="link link--underline" href="t.me/muktech_solution" target="_blank">Website by mUKTECH_SOLUTION</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
                   <div class="flex flex-col min-h-screen" data-transitions-container="">
                       <main class="main flex flex-col flex-grow relative z-2 bg-cream text-gray-900">
                           <section class="h-screen min-h-[60rem] relative z-2 intro-section text-cream overflow-hidden" style="--bg: #CEC1B2">
@@ -332,20 +351,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                   </div>
                               </div>
                           </section>
-                        <section class="relative text-cream bg-gray-900" id="features">
-                            <div class="bg-gray-900" data-animation="parallax" data-start="bottom bottom" data-end="bottom top" data-speed="1.5" data-start-at="0" data-starting-from="1280">
+                        <section style="background-image: url(images/3d1a4735-6d1b-4e60-ac29-9fb0d060fe2a.jfif);" class="relative text-cream bg-gray-900" id="features">
+                            <div   class="bg-gray-900" data-animation="parallax" data-start="bottom bottom" data-end="bottom top" data-speed="1.5" data-start-at="0" data-starting-from="1280">
                                 <span class="w-full h-full bg-black opacity-0 absolute z-10 left-0 top-0 pointer-events-none" data-animation="fade" data-from="0" data-to="0.35" data-scrub="" data-ease="none" data-repeat="" data-start="bottom bottom" data-end="+=100%"></span>
                                 <div class="min-h-screen relative grid" data-animation="chained-lamp" style="--h: 5">
-                                    <div class="flex flex-col h-screen sticky top-0 w-full  laptop:p-18 overflow-hidden bg-gray-900 col-start-1 col-span-1 row-start-1 row-end-1" data-content-item="" style="z-index: 4;">
-                                        <div class="flex-grow flex flex-col h-0">
+                                    <div  class="flex flex-col h-screen sticky top-0 w-full  laptop:p-18 overflow-hidden bg-gray-900 col-start-1 col-span-1 row-start-1 row-end-1" data-content-item="" style="z-index: 4;">
+                                        <div style="background: url(images/3d1a4735-6d1b-4e60-ac29-9fb0d060fe2a.jfif); background-size: cover; background-repeat: no-repeat;" class="flex-grow flex flex-col h-0">
                                             <div class="absolute left-0 bottom-0 w-auto h-full relative basis-[100%] h-0 width-full pt-30 md:w-auto md:pt-0 md:h-auto md:flex md:items-end md:max-w-[75%] md:-left-[10%] laptop:left-0 md:absolute lg:max-w-[80rem]" data-image-container="">
                                                 <span class="lamp-gradient absolute"></span>
-                                                <img class="h-full w-auto relative object-contain px-10 md:px-0 w-full md:w-auto object-bottom md:object-right-bottom md:min-h-0 relative laptop:left-[18%] sm:top-[-30em]" src="images/Windrad.png" data-image="" alt="ATMOS">
+                                                <img class="h-full w-auto relative object-contain px-10 md:px-0 w-full md:w-auto object-bottom md:object-right-bottom md:min-h-0 relative laptop:left-[18%] sm:top-[-30em]" src="images/42aadc14-e46d-4fbf-aeda-fdc811aac7d7.png" data-image="" alt="ATMOS">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col h-screen sticky top-0 w-full  laptop:p-18 overflow-hidden bg-gray-900 col-start-1 col-span-1 row-start-1 row-end-1" data-content-item="" style="z-index: 3;">
-                                        <div class="flex-grow flex flex-col h-0">
+                                        <div style="background: url(images/3d1a4735-6d1b-4e60-ac29-9fb0d060fe2a.jfif); background-size: cover; background-repeat: no-repeat;" class="flex-grow flex flex-col h-0">
                                             <div class="absolute left-0 bottom-0 w-auto h-full relative basis-[100%] h-0 width-full md:-left-[20%] lg:left-0 md:absolute md:w-auto laptop:max-w-full md:pt-0 md:h-full" data-image-container="">
                                                 <span class="lamp-gradient absolute"></span>
                                                 <img class="h-full w-auto relative h-full object-cover md:object-contain object-bottom md:object-right" src="images/sola.png" data-image="" alt="ATMOS">
@@ -353,7 +372,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                         </div>
                                     </div>
                                     <div class="flex flex-col h-screen sticky top-0 w-full  laptop:p-18 overflow-hidden bg-gray-900 col-start-1 col-span-1 row-start-1 row-end-1" data-content-item="" style="z-index: 2;">
-                                        <div class="flex-grow flex flex-col h-0">
+                                        <div style="background: url(images/3d1a4735-6d1b-4e60-ac29-9fb0d060fe2a.jfif); background-size: cover; background-repeat: no-repeat;" class="flex-grow flex flex-col h-0">
                                             <div class="absolute left-0 bottom-0 w-auto h-full absolute left-0 top-0 w-full h-full laptop:max-w-[83.7rem] md:-left-[20%] lg:left-0" data-image-container="">
                                                 <span class="lamp-gradient absolute"></span>
                                                 <img class="h-full w-auto relative h-full max-w-none left-1/2 -translate-x-1/2 object-cover object-right-bottom md:object-right laptop:left-[29.7%] laptop:transform-none" src="images/co2.png" data-image="" alt="ATMOS">
@@ -361,7 +380,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                         </div>
                                     </div>
                                     <div class="flex flex-col h-screen sticky top-0 w-full  laptop:p-18 overflow-hidden bg-gray-900 col-start-1 col-span-1 row-start-1 row-end-1" data-content-item="" style="z-index: 1;">
-                                        <div class="flex-grow flex flex-col h-0">
+                                        <div style="background: url(images/3d1a4735-6d1b-4e60-ac29-9fb0d060fe2a.jfif); background-size: cover; background-repeat: no-repeat;" class="flex-grow flex flex-col h-0">
                                             <div class="absolute left-0 bottom-0 w-auto h-full -mt-12 md:mt-0 relative basis-[100%] h-0 width-full md:absolute md:w-auto md:pt-0 md:h-full md:max-w-full laptop:max-w-[66.8rem]" data-image-container="">
                                                 <span class="lamp-gradient absolute"></span>
                                                 <img class="h-full w-auto relative laptop:left-[20.2%] md:bottom-[6.3%] object-contain object-top" src="images/uploads-lamp04_4f43001e69.png" data-image="" alt="ATMOS">
@@ -371,24 +390,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     <div class="col-start-1 col-span-1 row-start-1 row-end-1 h-screen flex items-end md:items-start w-full top-0 sticky z-10 md:justify-end">
                                         <div class="absolute z-2 opacity-0 laptop:opacity-100" data-circle-icon="">
                                             <svg class="w-50 h-50 laptop:w-[7.3rem] laptop:h-[7.2rem] rotated-icon" width="73" height="72" viewbox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path class="opacity-20" d="M71.5 36C71.5 16.9462 56.0538 1.5 37 1.5V0.5C56.6061 0.5 72.5 16.3939 72.5 36C72.5 55.6061 56.6061 71.5 37 71.5V70.5C56.0538 70.5 71.5 55.0538 71.5 36Z" fill="currentColor"></path>
+                                                <!-- <path class="opacity-20" d="M71.5 36C71.5 16.9462 56.0538 1.5 37 1.5V0.5C56.6061 0.5 72.5 16.3939 72.5 36C72.5 55.6061 56.6061 71.5 37 71.5V70.5C56.0538 70.5 71.5 55.0538 71.5 36Z" fill="currentColor"></path>
                                                 <path class="opacity-20" d="M20.7361 5.56636C9.88155 11.3794 2.5 22.8281 2.5 36C2.5 49.172 9.88155 60.6207 20.7361 66.4337L20.2639 67.3152C9.09741 61.3351 1.5 49.5552 1.5 36C1.5 22.4449 9.09741 10.665 20.2639 4.68481L20.7361 5.56636Z" fill="currentColor"></path>
                                                 <path class="half-circle-right" d="M37 71C56.33 71 72 55.33 72 36C72 16.67 56.33 1 37 1" stroke="currentColor"></path>
                                                 <path class="half-circle-left" d="M20.5 5.12561C9.48948 11.0222 2 22.6365 2 36C2 49.3636 9.48948 60.9779 20.5 66.8745" stroke="currentColor"></path>
                                                 <path class="inner-square" d="M47.5 22V22C49.433 22 51 23.567 51 25.5V25.5M26.5 22V22C24.567 22 23 23.567 23 25.5V25.5M47.5 50V50C49.433 50 51 48.433 51 46.5V46.5M26.5 50V50C24.567 50 23 48.433 23 46.5V46.5" stroke="currentColor"></path>
                                                 <circle cx="37" cy="36" r="7" fill="currentColor"></circle>
-                                                <circle cx="2" cy="36" r="2" fill="currentColor"></circle>
+                                                <circle cx="2" cy="36" r="2" fill="currentColor"></circle> -->
                                             </svg>
                                         </div>
                                         <svg class="absolute path-connection -z-1 pointer-events-none" width="449" height="247" viewbox="0 0 449 247" fill="none" xmlns="http://www.w3.org/2000/svg" data-connection-path="">
-                                            <!-- <path d="M1 1L309 246L449 246" stroke="currentColor" stroke-opacity="0.2" stroke-dasharray="6 6"></path> -->
+                                            <path d="M1 1L309 246L449 246" stroke="currentColor" stroke-opacity="0.2" stroke-dasharray="6 6"></path>
                                         </svg>
                                         <div class="p-12 laptop:p-18 relative left-0 bottom-0 w-full md:bottom-auto md:top-[7.6rem] md:left-auto md:w-auto md:right-0">
                                             <div class="grid relative w-full bottom-0 right-0 bg-bronze bg-opacity-10 backdrop-blur-lg rounded overflow-hidden md:max-w-[23rem] laptop:max-w-[30rem] 2xl:max-w-[33.5rem]" data-content-description-parent="">
                                                 <div class="w-full p-20" data-content-description="">
                                                     <div class="mb-20 md:mb-35">
                                                         <div class="custom-icon custom-icon--large">
-                                                            <img class="w-full h-full object-contain" src="images/uploads-icon_adjust_settings_8cec60f293.svg" alt="icon">
+                                                            <img class="w-full h-full object-contain" src="images/uploads-icon_air_bc40ab3995.svg" alt="icon">
                                                         </div>
                                                     </div>
                                                     <h3 class="h4 mb-10">Investieren mit Haltung</h3>
@@ -504,6 +523,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             <div class="pr-20 lg:pr-40">Wir investieren in Lösungen, die genau hier ansetzen – mutig, messbar und nachhaltig.</div>
                                         </div>
                                     </div>
+                                    <div style="margin-top: 5em;" class="font-medium flex  justify-center item-center" data-animation="moveUp">
+                                        <div>
+                                            <a class="inline-flex items-center link link--underline" href="https://help.ayocin.com/en/articles/9844786-what-are-the-benefits-of-air-purification" target="_blank"><span>Erfahre mehr über den Klimaschutz -></span><span class="ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline"><svg class="svgi">
+                                                        <use xlink:href="#svg-plus"></use>
+                                                    </svg></span></a>
+                                        </div>
+                                    </div>
                                 </div>
                               <div class="md:col-span-3">
                                     <div class="grid gap-y-10 md:gap-y-15 mb-20 md:mb-30">
@@ -532,16 +558,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             <div> Baut Grüne Infrastruktur au </div>
                                         </div>
                                     </div>
-                                    
-                                </div>
-                                </div>
-                                <div class="font-medium flex justify-center item-center" data-animation="moveUp">
-                                    <div>
-                                        <a class="inline-flex items-center link link--underline" href="https://help.ayocin.com/en/articles/9844786-what-are-the-benefits-of-air-purification" target="_blank"><span>Erfahre mehr über den Klimaschutz -></span><span class="ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline"><svg class="svgi">
-                                                    <use xlink:href="#svg-plus"></use>
-                                                </svg></span></a>
+                                    <div class="font-medium flex justify-center item-center" data-animation="moveUp">
+                                        <div>
+                                            <a class="inline-flex items-center link link--underline" href="https://help.ayocin.com/en/articles/9844786-what-are-the-benefits-of-air-purification" target="_blank"><span>Erfahre mehr über den Klimaschutz -></span><span class="ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline"><svg class="svgi">
+                                                        <use xlink:href="#svg-plus"></use>
+                                                    </svg></span></a>
+                                        </div>
                                     </div>
                                 </div>
+                                </div>
+                                
                         </section>
                         <section class="pb-100 laptop:pb-250 relative bg-cream text-gray-900 z-2" data-header-theme="dark">
                             <div class="relative pb-20 pt-40 md:pt-60 md:pb-35 laptop:pt-100 container md:grid md:grid-cols-12  md:gap-x-18">
@@ -587,7 +613,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 <div class="col-span-4">
                                     <div class="relative">
                                         <div class="relative rounded overflow-hidden bg-bronze bg-opacity-15" data-animation="moveUp">
-                                            <img class="rounded w-full h-full object-cover relative " src="images/Untitled design (4).png"/>
+                                            <img class="rounded w-full h-full object-cover relative " src="images/owi.jpg"/>
                                             <div class="absolute w-[3.4rem] h-[3.4rem] top-10 left-10 md:w-[3.6rem] md:h-[3.6rem] md:top-20 md:left-20 flex items-center justify-center leading-none flex-shrink-0  bg-gray-900 rounded-full" data-animation="scale" data-from="0" data-to="1" data-delay="0.2">
                                                 <span class="text-cream">C</span>
                                             </div>
@@ -611,10 +637,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 <div class="absolute left-0 top-0 w-full h-full" data-background="" data-animation="scale" data-scrub="" data-repeat="" data-from="1.025" data-to="1" data-start="top top" data-end="+=300%">
                                     <span class="absolute left-0 top-0 w-full bg-gradient-to-b from-gray-900 to-transparent opacity-40 h-full"></span>
                                     <picture class="w-full h-auto flex h-full md:hidden" style="--aspect: 0.4652173913043478">
-                                        <img class="block w-full h-full object-cover object-top opacity-0" data-component="lazyload" data-src="https://ayocin-cms.onrender.com/uploads/image34_12ffb90a30.jpg" alt="image description" width="642" height="1380" draggable="false" src="images/https:-ayocin.com">
+                                        <img class="block w-full h-full object-cover object-top opacity-0" data-component="lazyload" data-src="images/d13655fb-9d26-4469-acf6-0f994517abc6.jfif" alt="image description" width="642" height="1380" draggable="false" src="images/https:-ayocin.com">
                                     </picture>
                                     <picture class="w-full h-auto flex h-full hidden md:flex" style="--aspect: 1.5550755939524838">
-                                        <img class="block w-full h-full object-cover opacity-0" data-component="lazyload" data-src="https://ayocin-cms.onrender.com/uploads/image24_f7e19337d8.jpg" alt="image description" width="3600" height="2315" draggable="false" src="images/https:-ayocin.com">
+                                        <img class="block w-full h-full object-cover opacity-0" data-component="lazyload" data-src="images/d13655fb-9d26-4469-acf6-0f994517abc6.jfif" alt="image description" width="3600" height="2315" draggable="false" src="images/https:-ayocin.com">
                                     </picture>
                                 </div>
                                 <div class="pt-110 pb-100 sm:pb-150 md:pb-110 min-h-screen laptop:pt-40 laptop:pb-20 grid items-end relative z-3" data-content="">
@@ -622,6 +648,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                         <div class="overflow-hidden whitespace-nowrap w-full uppercase font-medium text-[5rem] leading-none md:text-[14rem] laptop:text-[24rem] gap-x-[0.5em] flex laptop:leading-[0.8]" data-animation="marquee" data-end="+=400%">
                                             <div class="flex" data-marquee="0">Trete unserem Blog bei&nbsp;</div>
                                             <div class="flex" data-marquee="1">Trete unserem Blog bei&nbsp;</div>
+                                        </div>
+                                        <div style="display: flex; justify-content: center; padding-top: 5em;">
+                                            <button style="background-color: whitesmoke; color: black; border: none; border-radius: 10px; padding: 1em 3em;"">CHECK OUT</button>
                                         </div>
                                     </div>
                                     <div class="container mt-auto">
@@ -820,63 +849,185 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 </div>
                             </div>
                         </section>
+                        
                         <section class="pb-100 laptop:pb-250 bg-cream text-gray-900 relative" data-header-theme="dark">
-                            <div class="relative pb-20 pt-40 md:pt-60 md:pb-35 laptop:pt-100 container md:grid md:grid-cols-12  md:gap-x-18">
+                            <div class="relative pb-20 pt-40 md:pt-60 md:pb-35 laptop:pt-100 container md:grid md:grid-cols-12 md:gap-x-18">
                                 <span class="absolute w-full h-1 bg-current opacity-20 top-0 left-0"></span>
                                 <div class="hidden md:block md:col-span-4 h3 m-0" data-animation="split">5.</div>
-                                <h3 class="md:col-span-8 m-0" data-animation="split">FAQ</h3>
+                                <h3 class="md:col-span-8 m-0" data-animation="split">FAQ - Häufig gestellte Fragen</h3>
                                 <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
                             </div>
                             <div class="mb-30 md:mb-60">
-                                <div class="container relative pt-40 pb-60 md:pt-12 md:pb-40 md:grid md:grid-cols-12 md:gap-x-18" data-animation="moveUp">
+                                <!-- FAQ Item 1 -->
+                                <div class="container relative pt-40 pb-20 md:pt-12 md:pb-20 md:grid md:grid-cols-12 md:gap-x-18 faq-item">
                                     <h4 class="hidden md:flex md:col-span-4 lg:col-span-4">5.1</h4>
-                                    <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5">What are the benefits of ATMOS?</h4>
-                                    <div class="pr-30 md:pr-10 md:col-span-4 lg:col-span-3">
-                                        <div class="wysiwyg reset-last">
-                                            <p>ATMOS helps create a healthier home environment by combining advanced light therapy and air purification technologies. Its benefits include enhanced sleep quality, stress reduction, healthier skin, an uplifted mood, improved mental well-being, relief from allergy symptoms, cleaner lungs, sharper cognition, and increased productivity, among others. Discover more about the health advantages of our <a href="https://help.ayocin.com/en/collections/10385289-light-therapy" target="_blank" rel="noopener noreferrer">light therapy</a> and <a href="https://help.ayocin.com/en/collections/10385288-air-purification" target="_blank" rel="noopener noreferrer">air purification features</a>.</p>
+                                    <div class="md:col-span-8 lg:col-span-8">
+                                        <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5 faq-question cursor-pointer flex items-center justify-between">
+                                            <span>Was ist die Smaragd Green Invest d.d. Holding?</span>
+                                            <span class="faq-toggle ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline transform transition-transform duration-300">
+                                                <svg class="svgi">
+                                                    <use xlink:href="#svg-plus"></use>
+                                                </svg>
+                                            </span>
+                                        </h4>
+                                        <div class="faq-answer pr-30 md:pr-10 hidden mt-4">
+                                            <div class="wysiwyg reset-last">
+                                                <p>Die Smaragd Holding ist eine Unternehmensgruppe, die sich auf nachhaltige Investments konzentriert – mit dem Ziel, Klimaschutz wirtschaftlich rentabel zu gestalten. Dazu gehören Investitionen in erneuerbare Energien, CO₂-Kompensation, grüne Mobilität und mehr.</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
                                 </div>
-                                <div class="container relative pt-40 pb-60 md:pt-12 md:pb-40 md:grid md:grid-cols-12 md:gap-x-18" data-animation="moveUp">
+                        
+                                <!-- FAQ Item 2 -->
+                                <div class="container relative pt-40 pb-20 md:pt-12 md:pb-20 md:grid md:grid-cols-12 md:gap-x-18 faq-item">
                                     <h4 class="hidden md:flex md:col-span-4 lg:col-span-4">5.2</h4>
-                                    <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5">How does ATMOS work?</h4>
-                                    <div class="pr-30 md:pr-10 md:col-span-4 lg:col-span-3">
-                                        <div class="wysiwyg reset-last">
-                                            <p>ATMOS combines multiple health-enhancing technologies into an elegant, all-in-one design. Equipped with an efficient motor and multi-layer HEPA filters, it <a href="https://help.ayocin.com/en/articles/9844774-how-does-air-purification-work" target="_blank" rel="noopener noreferrer">captures and eliminates 99.95% of airborne pollutants,</a> ensuring clean air throughout your home. Its advanced light therapy uses <a href="https://help.ayocin.com/en/articles/9844817-how-does-red-light-therapy-work" target="_blank" rel="noopener noreferrer">specialized LEDs</a> that emit precise wavelengths, proven to support your health and well-being.</p>
+                                    <div class="md:col-span-8 lg:col-span-8">
+                                        <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5 faq-question cursor-pointer flex items-center justify-between">
+                                            <span>Warum ist Klimaschutz für eine Holding überhaupt relevant?</span>
+                                            <span class="faq-toggle ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline transform transition-transform duration-300">
+                                                <svg class="svgi">
+                                                    <use xlink:href="#svg-plus"></use>
+                                                </svg>
+                                            </span>
+                                        </h4>
+                                        <div class="faq-answer pr-30 md:pr-10 hidden mt-4">
+                                            <div class="wysiwyg reset-last">
+                                                <p>Weil der Klimawandel nicht nur eine ökologische, sondern auch eine wirtschaftliche Herausforderung ist. Investitionen in Nachhaltigkeit sind nicht nur ethisch richtig, sondern wirtschaftlich zukunftssicher.</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
                                 </div>
-                                <div class="container relative pt-40 pb-60 md:pt-12 md:pb-40 md:grid md:grid-cols-12 md:gap-x-18" data-animation="moveUp">
+                        
+                                <!-- FAQ Item 3 -->
+                                <div class="container relative pt-40 pb-20 md:pt-12 md:pb-20 md:grid md:grid-cols-12 md:gap-x-18 faq-item">
                                     <h4 class="hidden md:flex md:col-span-4 lg:col-span-4">5.3</h4>
-                                    <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5">Where can I buy ATMOS?</h4>
-                                    <div class="pr-30 md:pr-10 md:col-span-4 lg:col-span-3">
-                                        <div class="wysiwyg reset-last">
-                                            <p>You can buy ATMOS <a href="#order3" data-scroll-to="#order3">here on our site</a>. Shipping is expected to start mid 2025, on a first ordered, first delivered basis.&nbsp;</p>
+                                    <div class="md:col-span-8 lg:col-span-8">
+                                        <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5 faq-question cursor-pointer flex items-center justify-between">
+                                            <span>Was bedeutet ESG in Ihrem Kontext?</span>
+                                            <span class="faq-toggle ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline transform transition-transform duration-300">
+                                                <svg class="svgi">
+                                                    <use xlink:href="#svg-plus"></use>
+                                                </svg>
+                                            </span>
+                                        </h4>
+                                        <div class="faq-answer pr-30 md:pr-10 hidden mt-4">
+                                            <div class="wysiwyg reset-last">
+                                                <p>ESG steht für Umwelt (Environmental), Soziales (Social) und Unternehmensführung (Governance). Diese Kriterien sind die Grundlage für alle unsere Investmententscheidungen.</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
                                 </div>
-                                <div class="container relative pt-40 pb-60 md:pt-12 md:pb-40 md:grid md:grid-cols-12 md:gap-x-18" data-animation="moveUp">
+                        
+                                <!-- FAQ Item 4 -->
+                                <div class="container relative pt-40 pb-20 md:pt-12 md:pb-20 md:grid md:grid-cols-12 md:gap-x-18 faq-item">
                                     <h4 class="hidden md:flex md:col-span-4 lg:col-span-4">5.4</h4>
-                                    <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5">Can I cancel my order?</h4>
-                                    <div class="pr-30 md:pr-10 md:col-span-4 lg:col-span-3">
-                                        <div class="wysiwyg reset-last">
-                                            <p>Yes, you can modify or cancel your order anytime before final payment, with a full refund of your deposit.</p>
+                                    <div class="md:col-span-8 lg:col-span-8">
+                                        <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5 faq-question cursor-pointer flex items-center justify-between">
+                                            <span>Welche Rolle spielen CO₂-Zertifikate?</span>
+                                            <span class="faq-toggle ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline transform transition-transform duration-300">
+                                                <svg class="svgi">
+                                                    <use xlink:href="#svg-plus"></use>
+                                                </svg>
+                                            </span>
+                                        </h4>
+                                        <div class="faq-answer pr-30 md:pr-10 hidden mt-4">
+                                            <div class="wysiwyg reset-last">
+                                                <p>CO₂-Zertifikate, insbesondere solche mit „Gold Standard", sind ein zentrales Werkzeug zur Kompensation von Emissionen und werden gezielt in unsere Strategien eingebunden – z. B. zur Steigerung der Nachhaltigkeit in der Immobilienfinanzierung.</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
                                 </div>
-                            </div>
-                            <div class="font-medium container md:flex md:justify-center" data-animation="moveUp">
-                                <div>
-                                    <a class="inline-flex items-center link link--underline" href="https://help.ayocin.com" target="_blank"><span>Help Center</span><span class="ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline"><svg class="svgi">
-                                                <use xlink:href="#svg-plus"></use>
-                                            </svg></span></a>
+                        
+                                <!-- FAQ Item 5 -->
+                                <div class="container relative pt-40 pb-20 md:pt-12 md:pb-20 md:grid md:grid-cols-12 md:gap-x-18 faq-item">
+                                    <h4 class="hidden md:flex md:col-span-4 lg:col-span-4">5.5</h4>
+                                    <div class="md:col-span-8 lg:col-span-8">
+                                        <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5 faq-question cursor-pointer flex items-center justify-between">
+                                            <span>Wie profitieren Investoren von nachhaltigen Anlagen?</span>
+                                            <span class="faq-toggle ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline transform transition-transform duration-300">
+                                                <svg class="svgi">
+                                                    <use xlink:href="#svg-plus"></use>
+                                                </svg>
+                                            </span>
+                                        </h4>
+                                        <div class="faq-answer pr-30 md:pr-10 hidden mt-4">
+                                            <div class="wysiwyg reset-last">
+                                                <p>Nachhaltige Investments bringen nicht nur langfristige Stabilität, sondern auch bessere Risikobewertungen, steigende Nachfrage und ein positives Image – sowohl bei Partnern als auch bei Kunden.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
+                                </div>
+                        
+                                <!-- FAQ Item 6 -->
+                                <div class="container relative pt-40 pb-20 md:pt-12 md:pb-20 md:grid md:grid-cols-12 md:gap-x-18 faq-item">
+                                    <h4 class="hidden md:flex md:col-span-4 lg:col-span-4">5.6</h4>
+                                    <div class="md:col-span-8 lg:col-span-8">
+                                        <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5 faq-question cursor-pointer flex items-center justify-between">
+                                            <span>Was unterscheidet die Smaragd Holding von anderen Investmentgesellschaften?</span>
+                                            <span class="faq-toggle ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline transform transition-transform duration-300">
+                                                <svg class="svgi">
+                                                    <use xlink:href="#svg-plus"></use>
+                                                </svg>
+                                            </span>
+                                        </h4>
+                                        <div class="faq-answer pr-30 md:pr-10 hidden mt-4">
+                                            <div class="wysiwyg reset-last">
+                                                <p>Wir kombinieren tiefgreifendes Nachhaltigkeitswissen mit unternehmerischem Denken. Unsere Investments sind ökologisch sinnvoll, wirtschaftlich durchdacht und sozial verantwortlich.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
+                                </div>
+                        
+                                <!-- FAQ Item 7 -->
+                                <div class="container relative pt-40 pb-20 md:pt-12 md:pb-20 md:grid md:grid-cols-12 md:gap-x-18 faq-item">
+                                    <h4 class="hidden md:flex md:col-span-4 lg:col-span-4">5.7</h4>
+                                    <div class="md:col-span-8 lg:col-span-8">
+                                        <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5 faq-question cursor-pointer flex items-center justify-between">
+                                            <span>Was ist die Verbindung zur Save the World Solution GmbH?</span>
+                                            <span class="faq-toggle ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline transform transition-transform duration-300">
+                                                <svg class="svgi">
+                                                    <use xlink:href="#svg-plus"></use>
+                                                </svg>
+                                            </span>
+                                        </h4>
+                                        <div class="faq-answer pr-30 md:pr-10 hidden mt-4">
+                                            <div class="wysiwyg reset-last">
+                                                <p>Die Save the World Solution GmbH ist Teil unseres Netzwerks und fokussiert sich auf operative Projekte im Bereich CO₂-Kompensation und Umweltbildung. Sie ergänzt unsere Holding durch konkrete Maßnahmen im Klimaschutz.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
+                                </div>
+                        
+                                <!-- FAQ Item 8 -->
+                                <div class="container relative pt-40 pb-60 md:pt-12 md:pb-40 md:grid md:grid-cols-12 md:gap-x-18 faq-item">
+                                    <h4 class="hidden md:flex md:col-span-4 lg:col-span-4">5.8</h4>
+                                    <div class="md:col-span-8 lg:col-span-8">
+                                        <h4 class="lg:pr-60 md:col-span-4 lg:col-span-5 faq-question cursor-pointer flex items-center justify-between">
+                                            <span>Wie kann ich Teil der Bewegung werden?</span>
+                                            <span class="faq-toggle ml-5 w-[0.9em] h-[0.9em] relative top-[0.1em] inline-block align-baseline transform transition-transform duration-300">
+                                                <svg class="svgi">
+                                                    <use xlink:href="#svg-plus"></use>
+                                                </svg>
+                                            </span>
+                                        </h4>
+                                        <div class="faq-answer pr-30 md:pr-10 hidden mt-4">
+                                            <div class="wysiwyg reset-last">
+                                                <p>Ob als Investor, Partner oder Unterstützer – wir freuen uns über jeden, der sich für eine grünere Zukunft engagiert. Kontaktieren Sie uns einfach, um mehr zu erfahren.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="absolute w-full h-1 bg-current opacity-20 bottom-0 left-0"></span>
                                 </div>
                             </div>
                         </section>
+                        
                     </main>
                     <footer class="footer bg-gray-900 text-cream  md:sticky md:bottom-0">
                         <div class="pt-60">
@@ -1028,6 +1179,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HLZGMV8" height="0" width="0" style="display:none;visibility:hidden"></iframe>
         </noscript>
         <!-- End Google Tag Manager (noscript) -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const faqQuestions = document.querySelectorAll('.faq-question');
+                
+                faqQuestions.forEach(question => {
+                    question.addEventListener('click', () => {
+                        const faqItem = question.closest('.faq-item');
+                        const answer = faqItem.querySelector('.faq-answer');
+                        
+                        // Toggle current item
+                        faqItem.classList.toggle('active');
+                        
+                        // Toggle answer visibility
+                        if (faqItem.classList.contains('active')) {
+                            answer.style.display = 'block';
+                            // Set a small timeout to allow display:block to take effect before animating
+                            setTimeout(() => {
+                                answer.style.maxHeight = answer.scrollHeight + 'px';
+                            }, 10);
+                        } else {
+                            answer.style.maxHeight = '0';
+                            // Wait for transition to complete before hiding
+                            setTimeout(() => {
+                                answer.style.display = 'none';
+                            }, 300);
+                        }
+                        
+                        // Close other open items
+                        document.querySelectorAll('.faq-item').forEach(item => {
+                            if (item !== faqItem && item.classList.contains('active')) {
+                                item.classList.remove('active');
+                                const otherAnswer = item.querySelector('.faq-answer');
+                                otherAnswer.style.maxHeight = '0';
+                                setTimeout(() => {
+                                    otherAnswer.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+        
         <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'923c4e0f3b6e766c',t:'MTc0MjU0ODEwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
     </body>
 </html>
