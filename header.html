@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Green Invest</title>
+    <style>
+        /* Reset conflicting Bootstrap styles first */
+        .dropdown-menu {
+            all: initial; /* Reset all Bootstrap dropdown styles */
+        }
+        
+        /* Now apply your custom styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 80px;
+            background-color: #f5f5f5;
+        }
+        
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            color: #333;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            position: relative;
+        }
+        
+        /* Logo styles */
+        .header-logo {
+            width: 8em;
+            height: auto;
+        }
+        
+        /* Navigation container */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        /* Navigation menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: inherit;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 0;
+            display: block;
+            white-space: nowrap;
+        }
+        
+        /* Dropdown styles - with !important to override Bootstrap */
+        .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            background-color: white !important;
+            min-width: 220px !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+            border-radius: 4px !important;
+            padding: 10px 0 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition: all 0.3s !important;
+            z-index: 1001 !important;
+            display: block !important;
+        }
+        
+        .dropdown-menu li {
+            padding: 8px 20px !important;
+            list-style: none !important;
+        }
+        
+        .dropdown-menu a {
+            color: #555 !important;
+            text-decoration: none !important;
+            display: block !important;
+            transition: color 0.3s !important;
+        }
+        
+        .dropdown-menu a:hover {
+            color: #0066cc !important;
+            background-color: transparent !important;
+        }
+        
+        .dropdown-container:hover .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Button styles */
+        .btn {
+            background-color: transparent !important;
+            color: #333 !important;
+            border: 1px solid #333 !important;
+            padding: 8px 20px !important;
+            border-radius: 4px !important;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            transition: all 0.3s !important;
+            white-space: nowrap !important;
+        }
+        
+        .btn:hover {
+            background-color: #f0f0f0 !important;
+        }
+        
+        .btn__icon {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-container {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 400px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: right 0.3s;
+                gap: 20px;
+            }
+            
+            .nav-container.active {
+                right: 0;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+            }
+            
+            .dropdown-menu {
+                position: static !important;
+                width: 100% !important;
+                box-shadow: none !important;
+                display: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                padding-left: 20px !important;
+            }
+            
+            .dropdown-container:hover .dropdown-menu,
+            .dropdown-container.active .dropdown-menu {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed top-0 left-0 w-full text-cream" data-header="">
+        <div class="header-container">
+            <div class="relative z-2">
+                <img src="images/green_invest.png" style="width: 8em; padding: 0;" class="header-logo cursor-pointer" data-scroll-to="top">
+            </div>
+            
+            <button class="mobile-menu-btn" data-menu-opener="">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" stroke="currentColor"></circle>
+                    <path d="M7 13L23 13" stroke="currentColor" stroke-linecap="round"></path>
+                    <path d="M7 17L23 17" stroke="currentColor" stroke-linecap="round"></path>
+                </svg>
+            </button>
+            
+            <div class="nav-container" data-header-menu="">
+                <ul class="nav-menu">
+                    <li class="nav-item" data-stagger="">
+                        <a class="nav-link" href="#features" data-scroll-to="#features">Home</a>
+                    </li>
+                    <li class="nav-item" data-stagger="">
+                        <a class="nav-link" href="about.html">Über Uns</a>
+                    </li>
+                    <li class="nav-item" data-stagger="">
+                        <a class="nav-link" href="study-case-single.html">Klimawandel</a>
+                    </li>
+                    <li class="nav-item" data-stagger="">
+                        <a class="nav-link" href="study-case-single.html">Klimaschutz</a>
+                    </li>
+                    <li class="nav-item dropdown-container" data-stagger="">
+                        <a class="nav-link" href="about.html">Unsere Firmen</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="certificate.html">Safe the World Solution</a>
+                            </li>
+                            <li>
+                                <a href="certificate.html">Biodos</a>
+                            </li>
+                            <li>
+                                <a href="certificate.html">OWI Immobilien</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" data-stagger="">
+                        <a class="nav-link" href="study-case.html">Zertifikationen</a>
+                    </li>
+                    <li class="nav-item" data-stagger="">
+                        <a class="nav-link" href="new.html">Blog</a>
+                    </li>
+                </ul>
+                
+                <button class="btn" type="button" data-order-button="" data-scroll-to="#order1" data-offset="header">
+                    Kontakt aufnehmen
+                    <div class="btn__icon">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 6H11" stroke="currentColor" stroke-linecap="round"></path>
+                            <path d="M6 1L11 6L6 11" stroke="currentColor" stroke-linecap="round"></path>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Your page content here -->
+        <div style="height: 2000px;"></div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const menuOpener = document.querySelector('[data-menu-opener]');
+        const navContainer = document.querySelector('.nav-container');
+        
+        menuOpener.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            
+            // Toggle between menu and close icons
+            const isOpen = navContainer.classList.contains('active');
+            menuOpener.innerHTML = isOpen ? 
+                `<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" stroke="currentColor"></circle>
+                    <path d="M10 10L20 20" stroke="currentColor" stroke-linecap="round"></path>
+                    <path d="M20 10L10 20" stroke="currentColor" stroke-linecap="round"></path>
+                </svg>` :
+                `<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="14.5" stroke="currentColor"></circle>
+                    <path d="M7 13L23 13" stroke="currentColor" stroke-linecap="round"></path>
+                    <path d="M7 17L23 17" stroke="currentColor" stroke-linecap="round"></path>
+                </svg>`;
+        });
+        
+        // Dropdown toggle for mobile
+        const dropdownContainers = document.querySelectorAll('.dropdown-container');
+        dropdownContainers.forEach(container => {
+            container.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.preventDefault();
+                    container.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

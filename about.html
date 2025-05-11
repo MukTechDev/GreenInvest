@@ -19,106 +19,239 @@
         <link rel="stylesheet" href="assets/css/carouselTicker.css">
         <link rel="stylesheet" href="assets/css/swiper.min.css">
         <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+            /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding-top: 70px;
+        }
+        
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Logo styles */
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        /* Navigation and button container */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        /* Navigation menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 0;
+            display: block;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            color: #0066cc;
+        }
+        
+        /* Dropdown styles */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1001;
+        }
+        
+        .dropdown-item {
+            padding: 8px 20px;
+        }
+        
+        .dropdown-item a {
+            color: #555;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        
+        .dropdown-item a:hover {
+            color: #0066cc;
+        }
+        
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* EXACT BUTTON STYLE FROM SCREENSHOT */
+        .contact-btn {
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #333;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-btn:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .contact-btn::after {
+            content: "→";
+            font-size: 18px;
+        }
+        
+        /* Main content */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 1500px;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 992px) {
+            .nav-menu {
+                gap: 15px;
+            }
+            
+            .nav-right {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-menu {
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+        }
+        </style>
         
     </head>
 
     <body>
         <!-- header-area-start -->
-        <!-- <header class="header inner-header sticky-active">
-            <div class="primary-header">
-                <div class="primary-header-inner">
-                    <div class="header-logo d-lg-block">
-                        <a href="index.html">
-                            <img src="assets/img/logo/logo-2.png" alt="Logo">
-                        </a>
-                    </div>
-                    <div class="header-right-wrap">
-                        <div class="header-menu-wrap">
-                            <div class="mobile-menu-items">
-                                <ul>
-                                    <li class="menu-item-has-children mega-menu">
-                                        <a href="index.html">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Web Design</a></li>
-                                            <li><a href="index-2.html">Creative Studio</a></li>
-                                            <li><a href="index-3.html">Web Development</a></li>
-                                            <li><a href="index-4.html">Modern Agency</a></li>
-                                            <li><a href="index-5.html">It Solution</a></li>
-                                            <li><a href="index-6.html">Digital Agency</a></li>
-                                            <li><a href="index-7.html">Corporate Agency</a></li>
-                                            <li><a href="index-8.html">Web Agency</a></li>
-                                            <li><a href="index-9.html">Creative Agency</a></li>
-                                            <li><a href="index-10.html">Digital Studio</a></li>
-                                            <li><a href="index-11.html">Startup Agency</a></li>
-                                            <li><a href="index-12.html">It Studio</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children active">
-                                        <a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="team-details.html">Team Details</a></li>
-                                            <li><a href="project.html">Portfolio</a></li>
-                                            <li><a href="project-details.html">Portfolio Details</a></li>
-                                            <li><a href="pricing.html">Pricing Plans</a></li>
-                                            <li><a href="faq.html">Faq</a></li>
-                                            <li><a href="error.html">404 Error</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="service.html">Services</a>
-                                        <ul>
-                                            <li><a href="service.html">Service</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="shop.html">Shop</a>
-                                        <ul>
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="shop-details.html">Shop Details</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="blog-grid.html">Blog</a>
-                                        <ul>
-                                            <li><a href="blog-grid.html">Blog Grid</a></li>
-                                            <li><a href="blog-grid-2.html">Blog list</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- /.header-menu-wrap --
-                        <div class="header-right">
-                            <div class="sidebar-icon">
-                                <button class="sidebar-trigger open">
-                                    <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.300781 0H5.30078V5H0.300781V0Z" fill="currentColor"></path>
-                                        <path d="M0.300781 9H5.30078V14H0.300781V9Z" fill="currentColor"></path>
-                                        <path d="M0.300781 18H5.30078V23H0.300781V18Z" fill="currentColor"></path>
-                                        <path d="M9.30078 0H14.3008V5H9.30078V0Z" fill="currentColor"></path>
-                                        <path d="M9.30078 9H14.3008V14H9.30078V9Z" fill="currentColor"></path>
-                                        <path d="M9.30078 18H14.3008V23H9.30078V18Z" fill="currentColor"></path>
-                                        <path d="M18.3008 0H23.3008V5H18.3008V0Z" fill="currentColor"></path>
-                                        <path d="M18.3008 9H23.3008V14H18.3008V9Z" fill="currentColor"></path>
-                                        <path d="M18.3008 18H23.3008V23H18.3008V18Z" fill="currentColor"></path>
-                                        </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- /.header-right --
-                    </div>
+        <header>
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="images/green_invest.png" alt="Company Logo">
+                </a>
+                
+                <div class="nav-right">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="">Über Uns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="study-case-single.html" class="nav-link">Klimawandel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="study-case-single.html" class="nav-link">Klimaschutz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">Unsere Firmen</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">
+                                    <a href="certificate.html">Safe the World Solution</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="certificate.html">Biodos</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="certificate.html">OWI Immobilien</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="study-case.html" class="nav-link">Zertifikationen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="new.html" class="nav-link">Blog</a>
+                        </li>
+                    </ul>
+                    
+                    <button class="contact-btn">Kontakt aufnehmen</button>
                 </div>
-                <!-- /.primary-header-inner --
             </div>
-        </header> -->
+        </header>
         <!-- /.Main Header -->
         
         <div id="popup-search-box">
@@ -643,6 +776,56 @@
         <script src="assets/js/slider.js"></script>
         <script src="assets/js/contact.js"></script>
         <script src="assets/js/main.js"></script>
-    
+        <script>
+            // Mobile menu toggle
+            const menuOpener = document.querySelector('[data-menu-opener]');
+            const navContainer = document.querySelector('.nav-container');
+            
+            menuOpener.addEventListener('click', () => {
+                navContainer.classList.toggle('active');
+                
+                // Toggle between menu and close icons
+                const isOpen = navContainer.classList.contains('active');
+                menuOpener.innerHTML = isOpen ? 
+                    `<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="14.5" stroke="currentColor"></circle>
+                        <path d="M10 10L20 20" stroke="currentColor" stroke-linecap="round"></path>
+                        <path d="M20 10L10 20" stroke="currentColor" stroke-linecap="round"></path>
+                    </svg>` :
+                    `<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="14.5" stroke="currentColor"></circle>
+                        <path d="M7 13L23 13" stroke="currentColor" stroke-linecap="round"></path>
+                        <path d="M7 17L23 17" stroke="currentColor" stroke-linecap="round"></path>
+                    </svg>`;
+            });
+            
+            // Dropdown toggle for mobile
+            const dropdownContainers = document.querySelectorAll('.dropdown-container');
+            dropdownContainers.forEach(container => {
+                container.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        container.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // Simulate loading progress
+            let progress = 0;
+            const loadingLine = document.querySelector('[data-loading-line]');
+            const loadingProgress = document.querySelector('[data-loading-progress]');
+            
+            const loadingInterval = setInterval(() => {
+                progress += 5;
+                loadingLine.style.transform = `scaleX(${progress/100})`;
+                loadingProgress.textContent = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(loadingInterval);
+                    loadingLine.style.opacity = '0';
+                    loadingProgress.style.opacity = '0';
+                }
+            }, 100);
+        </script>
 
 </body></html>
